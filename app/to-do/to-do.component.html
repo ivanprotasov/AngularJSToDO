@@ -1,0 +1,9 @@
+<div class="todo">
+  <ul class="todo__list">
+    <li ng-repeat="item in data">
+      <input type="checkbox" value="item.done" id="'id'+{{$index}}">
+      <label class="toggle" for="'id'+{{$index}}"></label>
+      <p>{{item.title}}</p>
+    </li>
+  </ul>
+</div>

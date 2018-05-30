@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Todo Client</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/libs/angular.js"></script>
+  </head>
+  <body>
+    <div class="todo" ng-controller="MainController as main">
+      <to-do data="main.data"></to-do>
+    </div>
+    <script src="app/app.controller.js"></script>
+    <script src="app/to-do/to-do.component.js"></script>
+  </body>
+</html>
