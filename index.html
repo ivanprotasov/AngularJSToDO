@@ -8,8 +8,9 @@
     <script src="assets/libs/angular.js"></script>
   </head>
   <body>
-    <div class="todo" ng-controller="MainController as main">
-      <to-do data="main.data"></to-do>
+    <div class="todo" ng-controller="MainController as ctrl">
+      <to-do data="ctrl.data"></to-do>
+      {{ctrl.data}}
     </div>
     <script src="app/app.controller.js"></script>
     <script src="app/to-do/to-do.component.js"></script>

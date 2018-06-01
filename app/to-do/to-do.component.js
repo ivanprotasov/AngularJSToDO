@@ -4,6 +4,12 @@ function toDo() {
     scope: {
       data: '='
     },
+    controller: function ($scope) {
+      this.remove = function (index) {
+        $scope.data.splice(index,1)
+      }
+    },
+    controllerAs: "ctrl",
     templateUrl: 'app/to-do/to-do.component.html'
   }
 }

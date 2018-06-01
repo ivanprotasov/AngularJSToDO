@@ -4,7 +4,7 @@ angular
     this.data = [
       {
         title: 'buy pizza',
-        done: 'false'
+        done: 'true'
       },
       {
         title: 'clean flat',
