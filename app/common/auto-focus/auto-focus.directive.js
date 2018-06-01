@@ -1,10 +1,11 @@
 angular
   .module('common', [])
-  .directive('tdAutoFocus', function () {
-    function link(scope, element, attrs) {
-      console.log(attrs)
-      scope.$watch(attrs.tdAutoFocus, function(value, value2) {
-        console.log(value, value2);
+  .directive('tdAutoFocus', function ($timeout) {
+    function link(scope, element) {
+      scope.$watch('tdAutoFocus', function () {
+        $timeout(function () {
+          element[0].focus();
+        });
       });
     }
     return {
