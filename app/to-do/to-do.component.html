@@ -4,16 +4,19 @@
       <input type="checkbox" ng-model="item.done" id="'id'+{{$index}}">
       <label class="toggle" for="'id'+{{$index}}"></label>
       <p
-        ng-dblclick="showEditableTitle = true;"
+        ng-dblclick="showEditableTitle = true; setFocus = true"
         ng-hide="showEditableTitle">
         {{item.title}}
       </p>
       <input
         type="text"
         ng-model="item.title"
-        ng-blur="showEditableTitle = false"
+        ng-blur="showEditableTitle = false; setFocus = false"
+        td-auto-focus="setFocus"
         ng-show="showEditableTitle"/>
       <a href="" ng-click="ctrl.remove(title,$index)">&#10008;</a>
     </li>
   </ul>
+  <div>1{{setFocus}}</div>
+
 </div>

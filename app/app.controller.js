@@ -1,5 +1,5 @@
 angular
-  .module('app', [])
+  .module('app', ['common'])
   .controller('MainController', function MainController() {
     this.data = [
       {
