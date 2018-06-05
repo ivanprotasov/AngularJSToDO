@@ -1,7 +1,11 @@
-<div class="todo">
+<div ng-if="!ctrl.data.length">Loading</div>
+<div ng-if="ctrl.data.length" class="todo">
+  <form ng-submit="ctrl.addItem(newItem)" class="todo__form">
+    <input type="text" ng-model="newItem">
+  </form>
   <ul class="todo__list">
-    <li ng-repeat="item in data">
-      <input type="checkbox" ng-model="item.done" id="'id'+{{$index}}">
+    <li ng-repeat="item in ctrl.data">
+      <input type="checkbox" ng-model="item.completed" id="'id'+{{$index}}">
       <label class="toggle" for="'id'+{{$index}}"></label>
       <p
         ng-dblclick="showEditableTitle = true; setFocus = true"
@@ -14,9 +18,8 @@
         ng-blur="showEditableTitle = false; setFocus = false"
         td-auto-focus="setFocus"
         ng-show="showEditableTitle"/>
-      <a href="" ng-click="ctrl.remove(title,$index)">&#10008;</a>
+      <a href="" ng-click="ctrl.remove($index)">&#10008;</a>
     </li>
   </ul>
-
-
+  {{ctrl.data}}
 </div>

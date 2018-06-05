@@ -8,11 +8,11 @@
     <script src="assets/libs/angular.js"></script>
   </head>
   <body>
-    <div class="todo" ng-controller="MainController as ctrl">
-      <to-do data="ctrl.data"></to-do>
-      {{ctrl.data}}
+    <div class="todo">
+      <to-do></to-do>
     </div>
-    <script src="app/app.controller.js"></script>
+    <script src="app/main.js"></script>
+    <script src="app/services/to-do.service.js"></script>
     <script src="app/to-do/to-do.component.js"></script>
     <script src="app/common/auto-focus/auto-focus.directive.js"></script>
   </body>
