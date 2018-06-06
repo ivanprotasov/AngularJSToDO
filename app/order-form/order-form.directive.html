@@ -1,0 +1,13 @@
+<pre>{{form.data | json}}</pre>
+<form novalidate ng-submit="form.onSubmit()">
+  <input type="text" placeholder="Your name" ng-model="form.data.name">
+  <input type="email" placeholder="Your email" ng-model="form.data.email">
+  <input type="text" placeholder="Your location" ng-model="form.data.location">
+  <select>
+    <option value="">Select...</option>
+  </select>
+  <textarea placeholder="Any messages" ng-model="form.data.comments"></textarea>
+  <button type="submit">
+    Order
+  </button>
+</form>

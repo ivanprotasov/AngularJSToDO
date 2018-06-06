@@ -1,25 +1,24 @@
-<div ng-if="!ctrl.data.length">Loading</div>
-<div ng-if="ctrl.data.length" class="todo">
-  <form ng-submit="ctrl.addItem(newItem)" class="todo__form">
-    <input type="text" ng-model="newItem">
+<div class="todo">
+  <form ng-submit="ctrl.addItem()" class="todo__form">
+    <input type="text" ng-model="ctrl.newItem">
   </form>
-  <ul class="todo__list">
-    <li ng-repeat="item in ctrl.data">
-      <input type="checkbox" ng-model="item.completed" id="'id'+{{$index}}">
-      <label class="toggle" for="'id'+{{$index}}"></label>
+  <div ng-if="!ctrl.editableData.length">Loading</div>
+  <ul ng-if="ctrl.editableData.length" class="todo__list">
+    <li ng-repeat="item in ctrl.editableData" ng-class="{done: item.completed}">
+      <input type="checkbox" ng-model="item.completed" id="{{'id'+$index}}" ng-click="ctrl.editItem(item)">
+      <label class="toggle" for="{{'id'+$index}}"></label>
       <p
-        ng-dblclick="showEditableTitle = true; setFocus = true"
+        ng-dblclick="showEditableTitle = true; setFocus = true;"
         ng-hide="showEditableTitle">
         {{item.title}}
       </p>
       <input
         type="text"
         ng-model="item.title"
-        ng-blur="showEditableTitle = false; setFocus = false"
+        ng-blur="showEditableTitle = false; setFocus = false; ctrl.editItem(item)"
         td-auto-focus="setFocus"
         ng-show="showEditableTitle"/>
-      <a href="" ng-click="ctrl.remove($index)">&#10008;</a>
+      <a href="" ng-click="ctrl.removeItem($index)">&#10008;</a>
     </li>
   </ul>
-  {{ctrl.data}}
 </div>

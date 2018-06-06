@@ -18,18 +18,32 @@ angular
         method: 'DELETE',
         url: API + index
       }).then(function (response) {
-        console.log(response)
         return response.data;
       })
     }
 
     function addToDo(item) {
+      if (!item){
+        return false
+      }
       return $http({
         method: 'POST',
         data: item,
-        url: API
+        url: API,
       }).then(function (response) {
-        console.log(response)
+        return response.data;
+      })
+    }
+
+    function editToDo(item) {
+      if (!item){
+        return false
+      }
+      return $http({
+        method: 'PUT',
+        data: item,
+        url: API + item.id,
+      }).then(function (response) {
         return response.data;
       })
     }
@@ -37,6 +51,7 @@ angular
     return {
       getToDos: getToDos,
       removeToDo: removeToDo,
-      addToDo: addToDo
+      addToDo: addToDo,
+      editToDo: editToDo
     }
 })

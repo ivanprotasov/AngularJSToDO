@@ -11,7 +11,12 @@
     <div class="todo">
       <to-do></to-do>
     </div>
+    <div ng-controller="OrderController as order">
+      <order-form data="order.customerOrder" submit="order.submitOrder()"></order-form>
+    </div>
     <script src="app/main.js"></script>
+    <script src="app/order.controller.js"></script>
+    <script src="app/order-form/order-form.directive.js"></script>
     <script src="app/services/to-do.service.js"></script>
     <script src="app/to-do/to-do.component.js"></script>
     <script src="app/common/auto-focus/auto-focus.directive.js"></script>
